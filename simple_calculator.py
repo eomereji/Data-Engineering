@@ -3,29 +3,21 @@
 
 
 def add(num1, num2):   # add function
-    #num1 = int(input("Enter a number: "))
-    #num2 = int(input("Enter another number: "))
     result = num1 + num2
     print(num1, "+", num2, " = ", result)
 
 
 def subtract(num1, num2):   # subtraction function
-    #num_1 = int(input("Enter a number: "))
-    #num_2 = int(input("Enter another number: "))
     result = num1 - num2
     print(num1, "-", num2, " = ", result)
 
 
 def multiply(num1, num2):  # multiplication function
-    #num_1 = int(input("Enter a number: "))
-    #num_2 = int(input("Enter another number: "))
     result = num1 * num2
     print(num1, "*", num2, " = ", result)
 
 
 def divide(num1, num2):   # division function
-    #num_1 = int(input("Enter a number: "))
-    #num_2 = int(input("Enter another number: "))
     result = num1 / num2
     print(num1, "/", num2, " = ", result)
 
