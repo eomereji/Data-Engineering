@@ -2,40 +2,33 @@
 # simple python calculator program
 
 
-def add(num1, num2):   # add function
-    result = num1 + num2
-    print(num1, "+", num2, " = ", result)
+import argparse
 
 
-def subtract(num1, num2):   # subtraction function
-    result = num1 - num2
-    print(num1, "-", num2, " = ", result)
+def main():
+    parser = argparse.ArgumentParser(description="calculator")
+    parser.add_argument("-operation", type=str,
+                        help="Which operation do you want to perform? Choose add, sub, mul or div?")
+    parser.add_argument("x", type=int, help="You need to enter a number")
+    parser.add_argument(
+        "y", type=int, help="You need to enter a second number")
+
+    args = parser.parse_args()
+    print(calc(args))
 
 
-def multiply(num1, num2):  # multiplication function
-    result = num1 * num2
-    print(num1, "*", num2, " = ", result)
+def calc(args):
+    if args.operation == "add":
+        return "{} + {} = {}".format(args.x, args.y, args.x + args.y)
+    elif args.operation == "sub":
+        return "{} - {} = {}".format(args.x, args.y, args.x - args.y)
+    elif args.operation == "mul":
+        return "{} * {} = {}".format(args.x, args.y, args.x * args.y)
+    elif args.operation == "div":
+        return "{} / {} = {}".format(args.x, args.y, args.x / args.y)
+    else:
+        return "You have chosen an invalid opearation"
 
 
-def divide(num1, num2):   # division function
-    result = num1 / num2
-    print(num1, "/", num2, " = ", result)
-
-
-# user input and choice of operation
-
-select = int(input("Select 1, 2, 3 or 4 to choose an operation: "))
-
-num1 = int(input("Enter a number: "))
-num2 = int(input("Enter another number: "))
-
-if select == 1:
-    add(num1, num2)
-elif select == 2:
-    subtract(num1, num2)
-elif select == 3:
-    multiply(num1, num2)
-elif select == 4:
-    divide(num1, num2)
-else:
-    print("You have entered an incorrect operation, Try again: ")
+if __name__ == "__main__":
+    main()
